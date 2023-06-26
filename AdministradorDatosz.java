@@ -7,44 +7,49 @@
 import java.util.Scanner;
 
 public class AdministradorDatosz {
-    private String nombre;
-    private int codigo;
-    private double precio;
-    private int cantidad;
-    private double precioTotal;
     public static void main(String[] args) {
-        Scanner fnd = new Scanner(System.in);
-        System.out.println("--Reegistro de Productos--");
-        int num_cmp = 3;
-        AdministradorDatosz[] zbras = new AdministradorDatosz[num_cmp];
-        double precio_Tc = 0;
-        for (int i = 0; i < num_cmp; i++) {
-            System.out.println("\nCompra " + (i + 1));
-            AdministradorDatosz zbra = new AdministradorDatosz();
-            System.out.print("Nombre del producto: ");
-            zbra.nombre = fnd.nextLine();
-            System.out.print("Código del producto: ");
-            zbra.codigo = fnd.nextInt();
-            fnd.nextLine();
-            System.out.print("Precio del producto: ");
-            zbra.precio = fnd.nextDouble();
-            fnd.nextLine();
-            System.out.print("Cantidad que va a llevar: ");
-            zbra.cantidad = fnd.nextInt();
-            fnd.nextLine();
-            zbra.precioTotal = zbra.precio * zbra.cantidad;
-            precio_Tc += zbra.precioTotal;
-            zbras[i] = zbra;
+        int numeroProductos;
+        String[] codigos = new String[50];
+        String[] nombres = new String[50];
+        int[] cantidades = new int[50];
+        double[] precios = new double[50];
+        double sumaPrecios = 0;
+        Scanner fnb = new Scanner(System.in);
+        System.out.println("Bienvenido(a) al Administrador de Datosz.");
+        System.out.println("Digite el número de productos a comprar:");
+        numeroProductos = fnb.nextInt();
+        for (int i = 0; i < numeroProductos; i++) {
+            System.out.println("\nProducto " + (i + 1) + ":");
+            System.out.println("Digite el código del producto:");
+            String codigo = fnb.next();
+            codigos[i] = codigo;
+            System.out.println("Digite el nombre del producto:");
+            String nombre = fnb.next();
+            nombres[i] = nombre;
+            System.out.println("Digite el precio del producto:");
+            double precio = fnb.nextDouble();
+            precios[i] = precio;
+            System.out.println("Digite la cantidad de productos a llevar:");
+            int cantidad = fnb.nextInt();
+            cantidades[i] = cantidad;
+            double totalProducto = precio * cantidad;
+            sumaPrecios += totalProducto;
         }
-        double prom_T = precio_Tc / num_cmp;
-        System.out.println("\nInformación de los productos:");
-        for (int i = 0; i < num_cmp; i++) {
-            System.out.println("\nCompra " + (i + 1));
-            System.out.println(zbras[i].toString());
+        double promedioPrecios = sumaPrecios / numeroProductos;
+        System.out.println("\nDetalle de la compra:");
+        for (int i = 0; i < numeroProductos; i++) {
+            System.out.println("Producto " + (i + 1) + ":");
+            System.out.println("Código: " + codigos[i]);
+            System.out.println("Nombre: " + nombres[i]);
+            System.out.println("Precio: $" + precios[i]);
+            System.out.println("Cantidad: " + cantidades[i]);
         }
-        System.out.println("\nPromedio del precio total de las compras: " + prom_T);
+        System.out.println("Suma total de los precios: $" + sumaPrecios);
+        System.out.println("Promedio de los precios: $" + promedioPrecios);
+        fnb.close();
     }
-    public String toString() {
+}
+
         return "Nombre: " + nombre + "\nCódigo: " + codigo + "\nPrecio: " + precio +
                "\nCantidad: " + cantidad + "\nPrecio total: " + precioTotal;
     }
