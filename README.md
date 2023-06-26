@@ -4,10 +4,14 @@
 ---
 
 El objetivo de este proyecto es desarrollar un sistema de gestión de productos para una tienda. Actualmente, el proceso de registro y seguimiento de los productos se realiza de forma manual, lo que conlleva a errores y dificultades en el cálculo de estadísticas relevantes.
+---
+## Aproximación Plantilla Historia de Usuario:
 ![image](https://github.com/MiguelSanchez12/Zalzamentaria.github.io/assets/136994004/1b76d330-5874-4bd3-a3be-0582aa583fed)
 
 ---
 ---
+## Aproximación Caso de Uso:
+
 ![image](https://github.com/MiguelSanchez12/Zalzamentaria.github.io/assets/136994004/9f1a97ba-b0b2-4054-b870-3c2a83d992ff)
 
 **Título del Caso de Uso:** Gestión de productos en una tienda
@@ -25,12 +29,13 @@ El objetivo de este proyecto es desarrollar un sistema de gestión de productos 
 5. El sistema muestra el promedio del precio total de las compras.
 ---
 ---
+## Aproximación Diagrama de Flujo:
 ![AdministradorTienda](https://github.com/MiguelSanchez12/zalzamentariaz.github.io/assets/136994004/21ad0d43-3a85-4c5e-84a6-c350498cff94)
 
 ---
 ---
-
-## Algoritmo AdministradorTienda
+## Aproximación Seudocódigo:
+### Algoritmo AdministradorTienda
 
 - Dimensionar `codigos(50)`, `nombres(50)`, `cantidades(50)`, `precios(50)`
 - Definir `numeroProductos` como Entero
