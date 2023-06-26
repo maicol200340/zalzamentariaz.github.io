@@ -25,36 +25,53 @@ El objetivo de este proyecto es desarrollar un sistema de gestión de productos 
 5. El sistema muestra el promedio del precio total de las compras.
 ---
 ---
+![AdministradorTienda](https://github.com/MiguelSanchez12/zalzamentariaz.github.io/assets/136994004/21ad0d43-3a85-4c5e-84a6-c350498cff94)
 
-Algoritmo CoordinadorTienda
-    Definir numCompras Como Entero
-    Definir productos[numCompras] Como Cadena
-    Definir precioTotalCompras Como Real
-    Definir promedioPrecioTotal Como Real
+---
+---
 
-    Mostrar "Registro de productos en la tienda"
+## Algoritmo AdministradorTienda
 
-    Para i = 1 hasta 3
-        Mostrar "Compra ", i
+- Dimensionar `codigos(50)`, `nombres(50)`, `cantidades(50)`, `precios(50)`
+- Definir `numeroProductos` como Entero
+- Definir `sumaPrecios`, `promedioPrecios` como Real
+- Definir `mensajeSuma`, `mensajePromedio` como Cadena
 
-        Mostrar "Nombre del producto: "
-        Leer productos[i].nombre
+- `numeroProductos <- 0`
+- `sumaPrecios <- 0`
 
-        Mostrar "Código del producto: "
-        Leer productos[i].codigo
+- Escribir 'Bienvenido a la Salsamentaria.'
+- Escribir 'Digite el número de productos a comprar:'
+- Leer `numeroProductos`
 
-        Mostrar "Precio del producto: "
-        Leer productos[i].precio
+- Para `i` <- 1 hasta `numeroProductos` con paso 1 hacer
+  - Escribir ''
+  - Escribir 'Producto '+ConvertirATexto(i)+':'
+  - Escribir 'Digite el código del producto:'
+  - Leer `codigos[i]`
+  - Escribir 'Digite el nombre del producto:'
+  - Leer `nombres[i]`
+  - Escribir 'Digite el precio del producto:'
+  - Leer `precios[i]`
+  - Escribir 'Digite la cantidad de productos a llevar:'
+  - Leer `cantidades[i]`
+  - `totalProducto <- precios[i]*cantidades[i]`
+  - `sumaPrecios <- sumaPrecios+totalProducto`
+- Fin Para
 
-        Mostrar "Cantidad que va a llevar: "
-        Leer productos[i].cantidad
+- `promedioPrecios <- sumaPrecios/numeroProductos`
+- `mensajeSuma <- 'Suma total de los precios: $'+ConvertirATexto(sumaPrecios)`
+- `mensajePromedio <- 'Promedio de los precios: $'+ConvertirATexto(promedioPrecios)`
 
-        productos[i].precioTotal = productos[i].precio * productos[i].cantidad
-        precioTotalCompras = precioTotalCompras + productos[i].precioTotal
-    FinPara
+- Escribir ''
+- Escribir 'Detalle de la compra:'
+- Para `i` <- 1 hasta `numeroProductos` con paso 1 hacer
+  - Escribir 'Producto '+ConvertirATexto(i)+':'
+  - Escribir 'Código: '+codigos[i]
+  - Escribir 'Nombre: '+nombres[i]
+  - Escribir 'Precio: $'+ConvertirATexto(precios[i])
+  - Escribir 'Cantidad: '+ConvertirATexto(cantidades[i])
+- Fin Para
 
-    promedioPrecioTotal = precioTotalCompras / 3
-
-    Mostrar "Promedio del precio total de las compras: ", promedioPrecioTotal
-FinAlgoritmo
-
+- Escribir `mensajeSuma`
+- Escribir `mensajePromedio`
