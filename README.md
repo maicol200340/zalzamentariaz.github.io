@@ -13,6 +13,8 @@ El objetivo de este proyecto es desarrollar un sistema de gestión de productos 
 ## Aproximación Caso de Uso:
 
 ![image](https://github.com/MiguelSanchez12/Zalzamentaria.github.io/assets/136994004/9f1a97ba-b0b2-4054-b870-3c2a83d992ff)
+![image](https://github.com/MiguelSanchez12/zalzamentariaz.github.io/assets/136994004/ad8d30a3-d185-4ea4-b3a1-5977bb9b7005)
+
 
 **Título del Caso de Uso:** Gestión de productos en una tienda
 
